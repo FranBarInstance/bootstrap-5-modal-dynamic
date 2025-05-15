@@ -1,25 +1,110 @@
-Bootstrap 5 modal dynamic content
-=================================
-### Modals with dynamically loaded content an modals over modals
+# Bootstrap 5 Dynamic Modal Loader
 
-Highly recommended for use with: [modal close on back buttom](https://github.com/FranBar1966/bootstrap-5-modal-close-on-back)
+**Dynamic loading of content in bootstrap 5 modal and modal on top of modal***
+
+[![Demo](https://img.shields.io/badge/▶-Live_Demo-blue?style=flat)](https://franbar1966.github.io/bootstrap-5-modal-dynamic/example/)
+
+A lightweight solution for loading dynamic content into Bootstrap 5 modals and handling modal stacking. Highly recommended for use with: [modal close on back buttom](https://github.com/FranBar1966/bootstrap-5-modal-close-on-back)
+
+## Features
+
+- **Preserves all native** Bootstrap modal functionality
+- **No conflicts** with existing modal implementations
+- Load modal content via AJAX or DOM elements
+- Support for nested modals
+- Dynamic template cloning
+- Customizable modal options via data attributes
+- No dependencies other than Bootstrap 5
+- Lightweight (~5KB minified)
+- Works seamlessly with [Modal Back Button Closer](https://github.com/FranBar1966/bootstrap-5-modal-close-on-back)
 
 ## Installation
 
-Add the script to your page, you can download it from [here](https://github.com/FranBar1966/bootstrap-5-modal-dynamic)
-
-```html
-<script src="modal-dynamic.min.js"></script>
-```
-
-Or from CDN:
+### Via CDN
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/FranBar1966/bootstrap-5-modal-dynamic@master/src/modal-dynamic.min.js"></script>
 ```
 
-### See: [DEMO](https://franbar1966.github.io/bootstrap-5-modal-dynamic/example/)
+### Download
 
+Download the script from GitHub repository: [modal dynamic](https://github.com/FranBar1966/bootstrap-5-modal-dynamic) and include in your HTML:
+
+```html
+<script src="path/to/modal-dynamic.min.js"></script>
+```
+
+## Configuration Options
+
+All options are set via data attributes:
+
+| Attribute               | Required | Description                                                                 |
+|-------------------------|----------|-----------------------------------------------------------------------------|
+| `href="#modal-id"`      | Yes      | Target modal ID (must start with #)                                         |
+| `data-template="#id"`   | Yes      | Template modal ID to clone (must start with #)                              |
+| `data-url="/url"`       | Yes*     | Load content from URL                                                       |
+| `data-url="#id"`        | Yes*     | Load content from #id                                                       |
+| `data-title="Text"`     | No       | Sets modal title text                                                       |
+| `data-header="#id"`     | No       | Load header content from DOM element                                        |
+| `data-noheader="true"`  | No       | Hides modal header when true                                                |
+| `data-nofooter="true"`  | No       | Hides modal footer when true                                                |
+| `data-width="500"`      | No       | Sets width (accepts px, %, or unitless values)                              |
+| `data-class="class"`    | No       | Adds CSS classes to modal (multiple classes space-separated)                |
+| `data-keyboard="false"` | No       | Disables ESC key close (default: true)                                      |
+| `data-backdrop="static"`| No       | Backdrop behavior, default none                                             |
+
+> *Note: Either `data-url` with URL or `data-url` with DOM selector (#element) is required
+
+> *Note: that you cannot mix the options with Bootstrap's (data-bs..) native modal
+
+## JavaScript Events
+
+The library dispatches custom events when content loading completes or fails:
+
+#### `neutralFetchCompleted`
+Dispatched when content is successfully loaded.
+
+**Event Properties:**
+```javascript
+detail: {
+  element: HTMLElement,  // The modal element
+  url: String            // The URL or selector used
+}
+```
+
+**Usage Example:**
+```javascript
+window.addEventListener('neutralFetchCompleted', (event) => {
+  const { element, url } = event.detail;
+  console.log('Content loaded for:', url);
+});
+```
+
+#### `neutralFetchError`
+
+Dispatched when content loading fails.
+
+**Event Properties:**
+```javascript
+detail: {
+  element: HTMLElement,  // The modal element
+  url: String,           // The URL or selector used
+}
+```
+
+**Usage Example:**
+```javascript
+window.addEventListener('neutralFetchError', (event) => {
+  const { element, url, error } = event.detail;
+  console.error('Failed to load:', url, error);
+  // Add error handling logic here
+  element.querySelector('.modal-body').innerHTML = `
+    <div class="alert alert-danger">
+      Failed to load content: ${error.message}
+    </div>
+  `;
+});
+```
 
 ## Usage
 
@@ -45,27 +130,6 @@ Add the .modal-dynamic class to the link to open the button, the following link 
   </div>
 </div>
 ```
-
-Note that you cannot mix the options with Bootstrap's native modal.
-
-### Options
-
-```code
-href="#modal-id"         set #modal-id to modal (REQUIRED)
-data-template="#id"      ID of the modal  (REQUIRED)
-data-url="#id"           modal content by html from #id (REQUIRED #id or /url)
-data-url="/url"          modal content by ajax /url (REQUIRED #id or /url)
-data-title="Title"       modal title
-data-header="#di"        header html content
-data-noheader="true"     remove modal header if true
-data-nofooter="true"     remove modal footer if true
-data-width="100"         modal size width in px
-data-width="100px"       modal size width in px
-data-width="100%"        modal size width in %
-data-class="fade"        add class to modal
-data-keyboard="false"    default true
-data-backdrop="static"   default none
- ```
 
 ### Same modal with different dynamic content
 
@@ -174,3 +238,9 @@ You can open a modal inside another modal. The container can be of any kind, but
     Open modal
 </a>
 ```
+
+### See: [DEMO](https://franbar1966.github.io/bootstrap-5-modal-dynamic/example/)
+
+## License
+
+The MIT License (MIT)
