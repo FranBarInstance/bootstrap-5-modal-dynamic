@@ -95,12 +95,12 @@ detail: {
 **Usage Example:**
 ```javascript
 window.addEventListener('neutralFetchError', (event) => {
-  const { element, url, error } = event.detail;
-  console.error('Failed to load:', url, error);
+  const { element, url } = event.detail;
+  console.error('Failed to load:', url);
   // Add error handling logic here
   element.querySelector('.modal-body').innerHTML = `
     <div class="alert alert-danger">
-      Failed to load content: ${error.message}
+      Failed to load content
     </div>
   `;
 });
