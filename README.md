@@ -69,7 +69,7 @@ data-backdrop="static"   default none
 
 ### Same modal with different dynamic content
 
-You can group a modal with the same ID, to display different content loaded dynamically in the same modal.
+You can group a modal with the same ID, to display different content loaded dynamically in the same modal. The demo has included in the help button “?” a link to open another modal, I think this would be an acceptable example to open a modal inside another modal.
 
 ```html
 <a type="button"
