@@ -23,7 +23,7 @@ A lightweight solution for loading dynamic content into Bootstrap 5 modals and h
 ### Via CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/FranBar1966/bootstrap-5-modal-dynamic@master/src/modal-dynamic.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/FranBar1966/bootstrap-5-modal-dynamic@0.0.1/src/modal-dynamic.min.js"></script>
 ```
 
 ### Download
