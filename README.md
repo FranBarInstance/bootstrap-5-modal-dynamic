@@ -62,6 +62,7 @@ All options are set via data attributes:
 The library dispatches custom events when content loading completes or fails:
 
 #### `neutralFetchCompleted`
+
 Dispatched when content is successfully loaded.
 
 **Event Properties:**
