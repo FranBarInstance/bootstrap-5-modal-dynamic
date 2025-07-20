@@ -2,9 +2,9 @@
 
 **Dynamic loading of content in bootstrap 5 modal and modal on top of modal***
 
-[![Demo](https://img.shields.io/badge/▶-Live_Demo-blue?style=flat)](https://franbar1966.github.io/bootstrap-5-modal-dynamic/example/)
+[![Demo](https://img.shields.io/badge/▶-Live_Demo-blue?style=flat)](https://franbarinstance.github.io/bootstrap-5-modal-dynamic/example/)
 
-A lightweight solution for loading dynamic content into Bootstrap 5 modals and handling modal stacking. Highly recommended for use with: [modal close on back buttom](https://github.com/FranBar1966/bootstrap-5-modal-close-on-back)
+A lightweight solution for loading dynamic content into Bootstrap 5 modals and handling modal stacking. Highly recommended for use with: [modal close on back buttom](https://github.com/franbarinstance/bootstrap-5-modal-close-on-back)
 
 ## Features
 
@@ -16,19 +16,19 @@ A lightweight solution for loading dynamic content into Bootstrap 5 modals and h
 - Customizable modal options via data attributes
 - No dependencies other than Bootstrap 5
 - Lightweight (~5KB minified)
-- Works seamlessly with [Modal Back Button Closer](https://github.com/FranBar1966/bootstrap-5-modal-close-on-back)
+- Works seamlessly with [Modal Back Button Closer](https://github.com/franbarinstance/bootstrap-5-modal-close-on-back)
 
 ## Installation
 
 ### Via CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/FranBar1966/bootstrap-5-modal-dynamic@0.0.1/src/modal-dynamic.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/franbarinstance/bootstrap-5-modal-dynamic@0.0.1/src/modal-dynamic.min.js"></script>
 ```
 
 ### Download
 
-Download the script from GitHub repository: [modal dynamic](https://github.com/FranBar1966/bootstrap-5-modal-dynamic) and include in your HTML:
+Download the script from GitHub repository: [modal dynamic](https://github.com/franbarinstance/bootstrap-5-modal-dynamic) and include in your HTML:
 
 ```html
 <script src="path/to/modal-dynamic.min.js"></script>
@@ -134,7 +134,7 @@ Add the .modal-dynamic class to the link to open the button, the following link 
 
 ### Same modal with different dynamic content
 
-You can group a modal with the same ID, to display different content loaded dynamically in the same modal. The [demo](https://franbar1966.github.io/bootstrap-5-modal-dynamic/example/) has included in the help button “?” a link to open another modal, I think this would be an acceptable example to open a modal inside another modal.
+You can group a modal with the same ID, to display different content loaded dynamically in the same modal. The [demo](https://franbarinstance.github.io/bootstrap-5-modal-dynamic/example/) has included in the help button “?” a link to open another modal, I think this would be an acceptable example to open a modal inside another modal.
 
 ```html
 <a type="button"
@@ -240,7 +240,7 @@ You can open a modal inside another modal. The container can be of any kind, but
 </a>
 ```
 
-### See: [DEMO](https://franbar1966.github.io/bootstrap-5-modal-dynamic/example/)
+### See: [DEMO](https://franbarinstance.github.io/bootstrap-5-modal-dynamic/example/)
 
 ## License
 
