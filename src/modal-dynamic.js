@@ -1,8 +1,8 @@
-/*! See: https://github.com/FranBar1966/bootstrap-5-modal-dynamic */
+/*! See: https://github.com/FranBarInstance/bootstrap-5-modal-dynamic */
 
 /*
  * Bootstrap 5 .modal-dynamic
- * https://github.com/FranBar1966/bootstrap-5-modal-dynamic
+ * https://github.com/FranBarInstance/bootstrap-5-modal-dynamic
  */
 
 (function() {
